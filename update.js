@@ -68,4 +68,6 @@ function DelElement() {
     let del= element.parentNode;
     //let del=document.getElementById(element.id);//Why it takes id of <li>..?
     del.remove();
+    todoList.splice(element.id-1,1);
+
 }
