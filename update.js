@@ -23,6 +23,7 @@ window.onload = function(){
         button1.onclick = DelElement;
         button.id = todoList.length + 1;
         button1.id=todoList.length + 1;
+        li.id=todoList.length+1;
         input.type = "hidden";
 
         let inpVal = document.createTextNode(inp.value);//search about it
@@ -64,12 +65,7 @@ function changeType(){
 }
 function DelElement() {
     let element = this;
-    let p=element.id-1;
-    for (let i=p;i<=todoList.length;i++)
-    {
-        let a=todoList[p++];
-        todoList[p++]=todoList[p];
-        todoList[p]=a;
-    }
-    todoList.pop();// Removes the element from the last,if 2 is selected, 3 will be deleted.
+    let del= element.parentNode;
+    //let del=document.getElementById(element.id);//Why it takes id of <li>..?
+    del.remove();
 }
